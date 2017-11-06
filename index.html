@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Not a Black Market</title>
+        <style>
+        img{
+            width:150px;
+        }
+        </style>
+        <script>
+            function recipt(){
+                var item1  = document.getElementById("item1");  
+                var item2  = document.getElementById("item2");
+                var item3  = document.getElementById("item3");
+                var output = document.getElementById("output");
+                var total = item1.value + item2.value + value3.value + tax;
+                var cart = total + shipping;
+                var wholesale = 
+                tax = (item1.value + item2.value + item3.value)*0.0875
+
+                item1 = parseInt("insert quality:"*price1);             
+                item2 = parseInt("insert quality:"*price2);
+                item3 = parseInt("insert quality:"*price3);
+                
+                price1 = 812,500;
+                price2 = 500,000;
+                price3 = 625,000;
+
+                cart = 0;
+                shipping= 0;
+
+                var build ="";
+                if (total<=100){
+                    shipping+=25
+                }else if(total>=100 & total<=200){
+                    shipping+=10
+                }else if(total>=200){
+                    shipping+=0
+
+                build+="item1:" + item1 + "<br>";
+                build+="item2:" + item2 + "<br>";
+                build+="item3:" + item3 + "<br>";
+                build+="tax:" + tax + "<br>";
+                build+="----------------------<br>"
+                build+="total:" + total;
+
+                
+                }
+
+                output.innerHTML = build;
+                
+                console.log();
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div>
+            <h2> Heart(Hot item!) <h2>
+            <img src = "heart.gif"><br>
+            <span>$812,500 </span>
+            <p>
+            ALWAYS FRESH FROM THE BODY! BUY NOW!
+            <p>
+                <input id="price1" type="text">
+            <button>Buy</button>
+             
+             
+             <h2> Lung (Single)<h2>
+            <img src = "lung.gif"><br>
+            <span>$500,000 </span>
+            <p>
+            Carefully Preserved,Garenteed clean!
+            <p>
+                 <input id="price2" type="text">
+            <button>Buy</button>
+             
+             
+             <h2> Liver <h2>
+            <img src = "liver.jpg"><br>
+            <span>$625,000 </span>
+            <p>
+            Strong,Useful liver,Always on stock!
+            <p>
+                 <input id="price3" type="text">
+            <button>Buy</button>
+    
+        </div>
+
+    </body>
+</html>
