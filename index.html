@@ -7,7 +7,10 @@
             width:150px;
         }
         body{
-            background-color:grey
+            background-color:black
+        }
+        body {
+            color:white;
         }
         
         </style>
@@ -17,9 +20,9 @@
                 var item2  = document.getElementById("item2");
                 var item3  = document.getElementById("item3");
                 var output = document.getElementById("output");
-                var total = item1.value + item2.value + value3.value + tax;
-                var cart = total + shipping;
-                tax = (item1.value + item2.value + item3.value)*0.0875
+                var subtotal  = parseFloat(item1.value * 812,500) + parseFloat(item2.value * 500,000) + parseFloat(item3.value * 625,000);
+                var tax = subtotal * 0.0875;
+                var total = subtotal + tax;
 
                 item1 = parseInt("insert quality:"*price1);             
                 item2 = parseInt("insert quality:"*price2);
@@ -28,29 +31,22 @@
                 price1 = 812,500;
                 price2 = 500,000;
                 price3 = 625,000;
-
-                cart = 0;
                 shipping= 0;
 
-                var build ="";
-                if (total<=100){
-                    shipping+=25
-                }else if(total>=100 && total<=200){
-                    shipping+=10
-                }else if(total>=200){
-                    shipping+=0
-
-                build+="item1:" + item1 + "<br>";
-                build+="item2:" + item2 + "<br>";
-                build+="item3:" + item3 + "<br>";
-                build+="tax:" + tax + "<br>";
-                build+="----------------------<br>"
-                build+="total:" + total;
-
-                
+               var build = "The Total Cost is " + total + "<br>";
+                if (total >=500,000){
+                build += "Shipping costs 25" + "<br>"
+                }else if(total >= 500,000 && total <=625,000){
+                build += "Shipping cost 50"
+                }else if (total >=812,500){
+                build +="Shipping is free"
                 }
 
-                output.innerHTML = build;
+                build += "Subtotal: " + subtotal + "<br>" ; 
+                build += "Tax: " + tax + "<br>"; 
+                build += "------------------------- <br>";
+                build += "Total: " + total + "<br>";
+            output.innerHTML = build;
                 
                 console.log();
             }
@@ -59,14 +55,22 @@
     
     <body>
         <div>
+            <h2> WELCOME TO THE BLACK MARKET! </h2> <br>
+            <br>
+            <br>
+
             <h2> Heart(Hot item!) <h2>
             <img src = "heart.gif"><br>
             <span>$812,500 </span>
             <p>
-            ALWAYS FRESH FROM THE BODY! BUY NOW!
+            100% FRESH!
             <p>
-                <input id="price1" type="text">
-            <button>Buy</button>
+            <input id = "item1" type = "text">
+            </div>
+            <button onclick = "Purchase();">
+             Purchase
+            </button>
+            <div id = "output"> </div>
              
              
              <h2> Lung (Single)<h2>
@@ -75,8 +79,12 @@
             <p>
             Carefully Preserved,Garenteed clean!
             <p>
-                 <input id="price2" type="text">
-            <button>Buy</button>
+            <input id = "item2" type = "text">
+            </div>
+            <button onclick = "Purchase();">
+             Purchase
+            </button>
+            <div id = "output"> </div>
              
              
              <h2> Liver <h2>
@@ -85,10 +93,12 @@
             <p>
             Strong,Useful liver,Always on stock!
             <p>
-                 <input id="price3" type="text">
-            <button>Buy</button>
-    
-        </div>
+            <input id = "item3" type = "text">
+            </div>
+            <button onclick = "Purchase();">
+             Purchase
+            </button>
+            <div id = "output"> </div>
 
     </body>
 </html>
