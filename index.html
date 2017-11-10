@@ -24,6 +24,8 @@
                 var subtotal  = parseFloat(item1.value * 812500) + parseFloat(item2.value * 500000) + parseFloat(item3.value * 625000);
                 var tax = subtotal * 0.0875;
                 var total = subtotal + tax;
+                var t = tax.toFixed(2);
+                var t2 = total.toFixed(2);
 
                 item1 = parseInt("insert quality:"*812,500);             
                 item2 = parseInt("insert quality:"*500,000);
